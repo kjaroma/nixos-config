@@ -46,11 +46,20 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.defaultSession = "none+i3";
-  services.xserver.windowManager.i3.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "none+i3";
+    };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        i3status
+	i3lock
+        rofi
+      ];
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -116,6 +125,7 @@
     pkgs.git
     pkgs.lazygit
     pkgs.zsh
+    pkgs.tmux
   ];
 
   programs = {
