@@ -55,7 +55,8 @@
       enable = true;
       extraPackages = with pkgs; [
         i3status
-	i3lock
+        i3lock
+        dmenu
         rofi
       ];
     };
@@ -126,6 +127,7 @@
     pkgs.lazygit
     pkgs.zsh
     pkgs.tmux
+    pkgs.feh
   ];
 
   programs = {
