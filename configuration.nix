@@ -59,6 +59,7 @@
         dmenu
         rofi
       ];
+      configFile=/home/user/.config/i3/config;
     };
   };
 
@@ -128,6 +129,8 @@
     pkgs.zsh
     pkgs.tmux
     pkgs.feh
+    pkgs.stow
+    pkgs.home-manager
   ];
 
   programs = {
