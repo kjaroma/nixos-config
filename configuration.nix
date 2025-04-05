@@ -130,7 +130,6 @@
     pkgs.tmux
     pkgs.feh
     pkgs.stow
-    pkgs.home-manager
   ];
 
   programs = {
